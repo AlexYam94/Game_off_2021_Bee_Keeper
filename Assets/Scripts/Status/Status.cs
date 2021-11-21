@@ -5,10 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "HiveStatus")]
 public class Status : ScriptableObject
 {
-    private int beesToChangePerDay;
+    public int beesToChangePerDay;
+    public GameObject icon;
+    public string description;
 
-    public int GetBeesToChangePerDay()
-    {
-        return beesToChangePerDay;
-    }
 }
