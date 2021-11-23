@@ -7,6 +7,5 @@ public class Status : ScriptableObject
 {
     public int beesToChangePerDay;
     public GameObject icon;
-    public string description;
 
 }
