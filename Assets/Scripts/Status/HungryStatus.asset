@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935249c2a1e375e42954cd9bff25870c, type: 3}
   m_Name: HungryStatus
   m_EditorClassIdentifier: 
-  beesToChangePerDay: 100
+  beesToChangePerDay: -100
   icon: {fileID: 5491874595745785132, guid: 765cf759037a00a4bae5916a94345a40, type: 3}
-  description: The colony is running out of food
+  isActivate: 1
+  lastHappenedDay: 9
+  coolDown: 5

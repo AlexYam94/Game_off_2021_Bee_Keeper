@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935249c2a1e375e42954cd9bff25870c, type: 3}
   m_Name: QueenDeadStatus
   m_EditorClassIdentifier: 
-  beesToChangePerDay: 100
+  beesToChangePerDay: -100
   icon: {fileID: 7173849946062244883, guid: 5ba0d7f312f8e5249bd852ba317478da, type: 3}
-  description: The queen of this colony is dead
+  isActivate: 1
+  lastHappenedDay: 7
+  coolDown: 20

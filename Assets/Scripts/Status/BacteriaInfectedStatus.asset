@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935249c2a1e375e42954cd9bff25870c, type: 3}
   m_Name: BacteriaInfectedStatus
   m_EditorClassIdentifier: 
-  beesToChangePerDay: 300
+  beesToChangePerDay: -300
   icon: {fileID: 9048681138542974313, guid: bb2d8b57d5a61974c9f7b6a446755244, type: 3}
-  description: The colony is infected with bacteria
+  isActivate: 1
+  lastHappenedDay: 6
+  coolDown: 10
