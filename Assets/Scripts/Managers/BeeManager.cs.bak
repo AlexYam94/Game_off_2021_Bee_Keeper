@@ -47,18 +47,15 @@ public class BeeManager : Updatable, ISaveable
         }
     }
 
-    public void CaptureState(string uid)
+    public void RestoreState(object state)
     {
-        PlayerPrefs.SetInt(uid+"0",currentBees[0]);
-        PlayerPrefs.SetInt(uid+"1",currentBees[1]);
-        PlayerPrefs.SetInt(uid+"2",currentBees[2]);
+        //TODO: Load number of bees and status
     }
 
-    public void RestoreState(string uid)
+    public object SaveState()
     {
-        currentBees[0] = PlayerPrefs.GetInt(uid+"0");
-        currentBees[1] = PlayerPrefs.GetInt(uid+"1");
-        currentBees[2] = PlayerPrefs.GetInt(uid+"2");
+        //TODO: Save number of bees and status
+        return null;
     }
 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Updatable
+public abstract class Updatable : MonoBehaviour
 {
-    void Update();
+    public abstract void UpdateGameState();
 }

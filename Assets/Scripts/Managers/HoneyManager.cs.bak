@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class HoneyManager : Updatable, ISaveable
+public class HoneyManager : Updatable
 {
     //Increase honey amount base on number of bees
     [SerializeField] private TextMeshProUGUI honeyText;
@@ -38,6 +38,7 @@ public class HoneyManager : Updatable, ISaveable
             if (newAmount < maxHoneyAmount)
                 honeyAmount[index] += honeyGenerateToday;
         }
+        //TODO: change text when harvest or change 
     }
 
     public void HarvestHoney(int index)
@@ -55,21 +56,6 @@ public class HoneyManager : Updatable, ISaveable
     public void ClearHoney()
     {
         displayAmount = 0;
-        honeyText.text = Math.Round(displayAmount, 1) + "L";
-    }
-
-    public void CaptureState(string uid){
-        PlayerPrefs.SetFloat(uid+"displayAmount", displayAmount);
-        PlayerPrefs.SetFloat(uid+"honeyAmount0",honeyAmount[0]);
-        PlayerPrefs.SetFloat(uid+"honeyAmount1",honeyAmount[1]);
-        PlayerPrefs.SetFloat(uid+"honeyAmount2",honeyAmount[2]);
-    }
-
-    public void RestoreState(string uid){
-        displayAmount = PlayerPrefs.GetFloat(uid+"displayAmount");
-        honeyAmount[0] = PlayerPrefs.GetFloat(uid+"honeyAmount0");
-        honeyAmount[1] = PlayerPrefs.GetFloat(uid+"honeyAmount1");
-        honeyAmount[2] = PlayerPrefs.GetFloat(uid+"honeyAmount2");
         honeyText.text = Math.Round(displayAmount, 1) + "L";
     }
 }

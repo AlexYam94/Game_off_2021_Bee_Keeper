@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class MoneyManager : MonoBehaviour, ISaveable
+public class MoneyManager : SaveableEntity
 {
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] float dollarPerHoney = 5;
@@ -29,11 +29,6 @@ public class MoneyManager : MonoBehaviour, ISaveable
         moneyText.text = "$"+moneyAmount;
     }
 
-    public int GetAmount()
-    {
-        return moneyAmount;
-    }
-
     public bool SpendMoney(int amount)
     {
         if(moneyAmount < amount)
@@ -43,15 +38,6 @@ public class MoneyManager : MonoBehaviour, ISaveable
         moneyAmount -= amount;
         moneyText.text = "$" + moneyAmount;
         return true;
-    }
-
-    public void CaptureState(string uid){
-        PlayerPrefs.SetInt("uid",moneyAmount);
-    }
-
-    public void RestoreState(string uid){
-        moneyAmount = PlayerPrefs.GetInt("uid");
-        moneyText.text = "$" + moneyAmount;
     }
 
 }

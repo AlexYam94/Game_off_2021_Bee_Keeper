@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour, ISaveable
 {
@@ -20,9 +19,8 @@ public class TimeManager : MonoBehaviour, ISaveable
     [SerializeField] int workingHourStart = 8;
     [SerializeField] int workingHourEnd = 17;
     [SerializeField] Updatable[] updatables;
-    [SerializeField] private int totalDay = 100;
-    [SerializeField] MoneyManager moneyManager;
 
+    private int totalDay = 365;
     private float timeLeftToday;
     private int currentTime;
     private int currentDay = 1;
@@ -64,17 +62,16 @@ public class TimeManager : MonoBehaviour, ISaveable
             currentDay += 1;
             dayText.text = "Day " + currentDay;
             currentTime = workingHourStart;
-            //for(int i=0; i<beehives.Length; i++)
-            //{
-            //    beehives[i].paralyzed = true;
-            //}
+            //TODO: call saveManager to save everything
+            for(int i=0; i<beehives.Length; i++)
+            {
+                beehives[i].paralyzed = true;
+            }
             UpdateGameStates();
-            SavingSystem.Save();
         }
         if(currentDay >= totalDay)
         {
-            MoneyRecord.Record(moneyManager.GetAmount());
-            SceneManager.LoadScene(2);
+            //TODO: load end game scene
         }
         
     }
@@ -92,14 +89,14 @@ public class TimeManager : MonoBehaviour, ISaveable
         return currentDay;
     }
 
-    public void CaptureState(string uid)
+    public object SaveState()
     {
-        PlayerPrefs.SetInt(uid,currentDay);
+        //TODO: Save days left
+        return null;
     }
 
-    public void RestoreState(string uid)
+    public void RestoreState(object state)
     {
-        currentDay = PlayerPrefs.GetInt(uid);
-        dayText.text = "Day " + currentDay;
+        //TODO: Load days left
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -110,10 +109,10 @@ public class StatusManager : Updatable, ISaveable
         //50% nothing happened, 50% bad status
         for (int i = 0; i < 3; i++)
         {
-            float result = UnityEngine.Random.Range(0f, 1f);
+            float result = Random.Range(0f, 1f);
             if (result < 0.5)
             {
-                Status status = statuses[i][UnityEngine.Random.Range(0, statuses[i].Length)];
+                Status status = statuses[i][Random.Range(0, statuses[i].Length)];
                 if ((status.lastHappenedDay + status.coolDown) <= timeManager.GetCurrentDay())
                 {
                     status.isActivate = true;
@@ -145,6 +144,16 @@ public class StatusManager : Updatable, ISaveable
         }
     }
 
+    public void RestoreState(object state)
+    {
+        statuses = (Status[][])state;
+    }
+
+    public object SaveState()
+    {
+        return statuses;
+    }
+
     [ContextMenu("test activate status")]
     public void TestActivateStatus()
     {
@@ -162,33 +171,5 @@ public class StatusManager : Updatable, ISaveable
     public override void UpdateGameState()
     {
         ActivateRandomStatus();
-    }
-
-    
-    public void CaptureState(string uid)
-    {
-        //Store statuses (isActivate, lastHappendDay) by index
-        for(int i = 0;i < statuses.Length;i++){
-            for(int j = 0;j < statuses[i].Length; j++){
-                PlayerPrefs.SetString(""+i+":"+j, statuses[i][j].isActivate +":"+statuses[i][j].lastHappenedDay);
-            }
-        }
-    }
-
-    public void RestoreState(string uid)
-    {
-        //restore statuses (isActivate, lastHappenedDay) by index
-        //Update statusObject and inspectedStatus according to statuses.isActivate
-        //Not neccessary to restore statusObject and inspectedStatus, let player inspect them 
-        for(int i = 0;i < statuses.Length;i++){
-            for(int j = 0;j < statuses[i].Length; j++){
-                string str = PlayerPrefs.GetString(""+i+":"+j);
-                string[] state = str.Split(':');
-                bool isActivate = bool.Parse(state[0]);
-                int lastHappenedDay = Int32.Parse(state[1]);
-                statuses[i][j].isActivate = isActivate;
-                statuses[i][j].lastHappenedDay = lastHappenedDay;
-            }
-        }
     }
 }
