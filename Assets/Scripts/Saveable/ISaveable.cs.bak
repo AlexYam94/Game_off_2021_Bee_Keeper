@@ -6,7 +6,7 @@ public interface ISaveable
 {
     //Only save per day
     //Save been call when one day end
-    void CaptureState(string uid);
+    object SaveState();
 
-    void RestoreState(string uid);
+    void RestoreState(object state);
 }
