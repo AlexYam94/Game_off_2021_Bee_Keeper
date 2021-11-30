@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1225572412905487661
+--- !u!1 &4150752644249881950
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1225572412905487658}
-  - component: {fileID: 1225572412905487656}
-  - component: {fileID: 1225572412905487659}
-  - component: {fileID: -3123611110922219225}
-  - component: {fileID: 9684573}
-  - component: {fileID: 9684574}
+  - component: {fileID: 8841305875038407976}
+  - component: {fileID: 5346292284409987428}
+  - component: {fileID: 5940400056013982027}
+  - component: {fileID: 718778081}
+  - component: {fileID: 718778080}
+  - component: {fileID: 718778084}
+  - component: {fileID: 718778083}
+  - component: {fileID: 718778082}
   m_Layer: 5
-  m_Name: BeeSmoker
+  m_Name: HarvestingTools
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1225572412905487658
+--- !u!224 &8841305875038407976
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225572412905487661}
+  m_GameObject: {fileID: 4150752644249881950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +42,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1225572412905487656
+--- !u!222 &5346292284409987428
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225572412905487661}
+  m_GameObject: {fileID: 4150752644249881950}
   m_CullTransparentMesh: 1
---- !u!114 &1225572412905487659
+--- !u!114 &5940400056013982027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225572412905487661}
+  m_GameObject: {fileID: 4150752644249881950}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -68,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e439671dda00e22408e5d00f523d6303, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20adb636d9d22c34095ebc8ba98a77ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -78,43 +80,69 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-3123611110922219225
+--- !u!225 &718778081
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150752644249881950}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &718778080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225572412905487661}
+  m_GameObject: {fileID: 4150752644249881950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a68c70f43a76bd0418eb3f7b3b50f11c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d8400212c13d574a88fc60c43ca78b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _description: A device to paralyze bee
---- !u!114 &9684573
+  honeyManager: {fileID: 0}
+--- !u!114 &718778084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225572412905487661}
+  m_GameObject: {fileID: 4150752644249881950}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 306dc7b6667288645b143b0402702380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9684574
+  canvas: {fileID: 0}
+--- !u!114 &718778083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225572412905487661}
-  m_Enabled: 0
+  m_GameObject: {fileID: 4150752644249881950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68c70f43a76bd0418eb3f7b3b50f11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _description: Tools for harvesting honey
+--- !u!114 &718778082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150752644249881950}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.051886797, g: 1, b: 0.94135576, a: 0.5}
-  m_EffectDistance: {x: 2, y: 2}
+  m_EffectColor: {r: 0.050980393, g: 1, b: 0.9411765, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
