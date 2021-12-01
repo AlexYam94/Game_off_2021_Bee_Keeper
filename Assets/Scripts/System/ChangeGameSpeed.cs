@@ -15,7 +15,7 @@ public class ChangeGameSpeed : MonoBehaviour
         {
             accelerateSpeedIcon.SetActive(true);
             normalSpeedIcon.SetActive(false);
-            Time.timeScale = 2;
+            Time.timeScale = 3 ;
             isAccelerated = true;
         }
         else
